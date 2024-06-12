@@ -14,26 +14,31 @@ go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 CGO_ENABLED=0 GOARCH=amd64 GOOS=linux \
     xcaddy build \
     --output ${ARTIFACTS}/binaries/linux/amd64/caddy \
-    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD
+    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD \
+    --with github.com/caddy-dns/cloudflare
 
 # ARM
 CGO_ENABLED=0 GOARCH=arm GOARM=6 GOOS=linux \
     xcaddy build \
     --output ${ARTIFACTS}/binaries/linux/arm/v6/caddy \
-    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD
+    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD \
+    --with github.com/caddy-dns/cloudflare
 
 CGO_ENABLED=0 GOARCH=arm GOARM=7 GOOS=linux \
     xcaddy build \
     --output ${ARTIFACTS}/binaries/linux/arm/v7/caddy \
-    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD
+    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD \
+    --with github.com/caddy-dns/cloudflare
 
 CGO_ENABLED=0 GOARCH=arm64 GOOS=linux \
     xcaddy build \
     --output ${ARTIFACTS}/binaries/linux/arm64/caddy \
-    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD
+    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD \
+    --with github.com/caddy-dns/cloudflare
 
 # AMD64 WINDOWS
 CGO_ENABLED=0 GOARCH=amd64 GOOS=windows \
     xcaddy build \
     --output ${ARTIFACTS}/binaries/windows/amd64/caddy.exe \
-    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD
+    --with github.com/lucaslorentz/caddy-docker-proxy/v2=$PWD \
+    --with github.com/caddy-dns/cloudflare
