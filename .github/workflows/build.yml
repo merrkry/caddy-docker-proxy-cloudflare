@@ -38,3 +38,4 @@ jobs:
           context: .
           push: true
           tags: merrkry/caddy-docker-proxy-cloudflare:ci
+          platforms: linux/amd64,linux/arm64
