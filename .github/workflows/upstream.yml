@@ -1,0 +1,20 @@
+name: Scheduled Merge Remote Action
+on:
+  schedule:
+    - cron: "0 0 * * 6"
+  workflow_dispatch:
+jobs:
+  merge-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+          fetch-depth: 0
+      - name: Merge Upstream
+        uses: exions/merge-upstream@v1
+        with:
+          upstream: lucaslorentz/caddy-docker-proxy
+          upstream-branch: master
+          branch: master
